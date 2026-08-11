@@ -5,6 +5,18 @@ body {
     background-color: #517ef8;
 }
 
+main {
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+header {
+    height: 100px;
+    background-color: #517ef8;
+    padding: 20px;
+    text-align: center;
+}
  h1 {
     text-align: center;
     color: #000000;
@@ -14,3 +26,13 @@ h2{
     text-align: center;
     color: #000000;
             }
+p {
+    text-align: center;
+    color: #000000;
+}
+nav {
+    background-color: #517ef8;
+    padding: 10px;
+    text-align: center;
+    color: rgb(160, 160, 170)
+}

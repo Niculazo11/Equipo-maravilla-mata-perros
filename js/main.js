@@ -5,7 +5,7 @@ import {
 } from "./validation.js";
 
 
-// FORMULARIO
+
 
 const form = document.getElementById("joinForm");
 
@@ -22,7 +22,6 @@ const formSuccess = document.getElementById("formSuccess");
 const welcomeMessage = document.getElementById("welcomeMessage");
 
 
-// MOSTRAR USUARIO GUARDADO
 
 const savedName = localStorage.getItem("name");
 
@@ -31,7 +30,7 @@ if (savedName) {
 }
 
 
-// VALIDAR FORMULARIO
+
 
 form.addEventListener("submit", function(event) {
 
@@ -66,14 +65,14 @@ form.addEventListener("submit", function(event) {
 });
 
 
-// BUSCADOR
+
 
 const searchInput = document.getElementById("searchInput");
 const benefits = document.querySelectorAll("#benefitsList li");
 const noResults = document.getElementById("noResults");
 
 
-// Ocultar los beneficios inicialmente
+
 
 benefits.forEach(function(benefit) {
     benefit.style.display = "none";
@@ -82,7 +81,7 @@ benefits.forEach(function(benefit) {
 noResults.style.display = "none";
 
 
-// Buscar mientras escribimos
+
 
 searchInput.addEventListener("input", function() {
 
@@ -118,7 +117,6 @@ searchInput.addEventListener("input", function() {
 });
 
 
-// CTRL + K → TRADUCIR EL ITEM
 
 document.addEventListener("keydown", function(event) {
 
@@ -165,3 +163,31 @@ document.addEventListener("keydown", function(event) {
     }
 
 });
+
+
+(function () {
+    "use strict";
+
+    const STORAGE_KEY = "theme";
+    const DARK_CLASS = "dark-mode";
+
+    const toggleButton = document.getElementById("dark-mode");
+
+    if (!toggleButton) {
+        return;
+    }
+
+    const savedTheme = localStorage.getItem(STORAGE_KEY);
+
+    if (savedTheme === "dark") {
+        document.body.classList.add(DARK_CLASS);
+    }
+
+    toggleButton.addEventListener("click", function (event) {
+        event.preventDefault();
+
+        const isDark = document.body.classList.toggle(DARK_CLASS);
+
+        localStorage.setItem(STORAGE_KEY, isDark ? "dark" : "light");
+    });
+})();
